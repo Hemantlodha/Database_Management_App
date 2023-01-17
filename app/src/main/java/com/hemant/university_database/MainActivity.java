@@ -1,14 +1,18 @@
 package com.hemant.university_database;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -20,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     Button button7;
     Button button8;
     Button button9;
+    private Toolbar toolbar;
     DataHelper db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,19 +34,13 @@ public class MainActivity extends AppCompatActivity {
         button7=findViewById(R.id.button7);
         button8=findViewById(R.id.button8);
         button9=findViewById(R.id.button9);
-        db=new DataHelper(this);
         ImageView next =  (ImageView) findViewById(R.id.imageView);
-        Button btn = (Button) findViewById(R.id.newBtn);
-        next.setOnClickListener(new View.OnClickListener() {
-            @SuppressLint("SuspiciousIndentation")
-            @Override
-            public void onClick(View v) {
-                if(btn.getVisibility()!= View.VISIBLE)
-                    btn.setVisibility(View.VISIBLE);
-                else
-                btn.setVisibility(View.INVISIBLE);
-            }
-        });
+        toolbar=findViewById(R.id.mytoolbar1);
+        setSupportActionBar(toolbar);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setHomeAsUpIndicator(R.drawable.img_3);
+        db=new DataHelper(this);
         button8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -123,5 +122,15 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId())
+        {
+            case android.R.id.home:
+//                DrawerLayout.
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
