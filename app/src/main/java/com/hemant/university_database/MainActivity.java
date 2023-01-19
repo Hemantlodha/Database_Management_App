@@ -24,7 +24,6 @@ public class MainActivity extends AppCompatActivity {
     Button button7;
     Button button8;
     Button button9;
-    private Toolbar toolbar;
     DataHelper db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,11 +34,6 @@ public class MainActivity extends AppCompatActivity {
         button8=findViewById(R.id.button8);
         button9=findViewById(R.id.button9);
         ImageView next =  (ImageView) findViewById(R.id.imageView);
-        toolbar=findViewById(R.id.mytoolbar1);
-        setSupportActionBar(toolbar);
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setHomeAsUpIndicator(R.drawable.img_3);
         db=new DataHelper(this);
         button8.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -122,15 +116,5 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId())
-        {
-            case android.R.id.home:
-//                DrawerLayout.
-        }
-        return super.onOptionsItemSelected(item);
     }
 }
