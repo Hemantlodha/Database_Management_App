@@ -6,7 +6,7 @@
         android:title="home"
         />
     <item android:id="@+id/profile"
-        android:icon="@drawable/img_3"
+        android:icon="@drawable/ic_baseline_person_outline_24"
         android:title="profile"
         />
     <item android:id="@+id/course"
