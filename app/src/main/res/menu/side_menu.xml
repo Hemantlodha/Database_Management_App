@@ -10,7 +10,7 @@
         android:title="profile"
         />
     <item android:id="@+id/course"
-        android:icon="@drawable/img_3"
+        android:icon="@drawable/ic_baseline_collections_24"
         android:title="course"
         />
 </group>
