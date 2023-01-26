@@ -24,7 +24,7 @@ import android.widget.Toast;
 import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity {
-    Button button;
+    ImageView button;
     Button button7;
     Button button8;
     Button button9;
