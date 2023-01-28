@@ -25,7 +25,7 @@ import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity {
     ImageView button;
-    Button button7;
+    ImageView button7;
     Button button8;
     ImageView button9;
     DataHelper db;
