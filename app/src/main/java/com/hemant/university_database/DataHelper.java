@@ -26,7 +26,6 @@ public class DataHelper extends SQLiteOpenHelper {
         db.execSQL("create table Student(name TEXT,Scholar_no integer Primary Key,course_id TEXT not null,dob TEXT,Year_en TEXT,foreign key(course_id) references Course(course_id))");
         db.execSQL("create table Course(c_name TEXT ,course_id TEXT Primary Key,no_of_Student integer,dura integer)");
         db.execSQL("create table Dept(d_name TEXT ,dept_id TEXT Primary Key,no_of_Student integer,HOD TEXT)");
-        db.execSQL("create table Professor(p_name TEXT ,emp_id TEXT Primary Key,salary integer,dept_id TEXT,dob TEXT,foreign key(dept_id) references Dept(dept_id))");
     }
 
     @Override
@@ -45,19 +44,6 @@ public class DataHelper extends SQLiteOpenHelper {
         cv.put("dob",dob);
         cv.put("Year_en",Year_en);
         long result = db.insert("Student",null,cv);
-        if(result==-1)
-            return false;
-        return true;
-    }
-    public boolean insertprof(String p_name, int salary, String emp_id, String dob,String dept_id){
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues cv = new ContentValues();
-        cv.put("p_name",p_name);
-        cv.put("salary",salary);
-        cv.put("emp_id",emp_id);
-        cv.put("dob",dob);
-        cv.put("dept_id",dept_id);
-        long result = db.insert("Professor",null,cv);
         if(result==-1)
             return false;
         return true;
@@ -91,17 +77,6 @@ public class DataHelper extends SQLiteOpenHelper {
         }
         return false;
     }
-    public boolean deletedataProf(String Emp_id){
-        SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor=db.rawQuery("select * from Student where scholar_no=?",new String[]{Emp_id});
-        if(cursor.getCount()>0) {
-            long result = db.delete("Student", "scholar_no=?",new String[]{Emp_id});
-            if (result == -1)
-                return false;
-            return true;
-        }
-        return false;
-    }
     public Cursor getData(){
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor= db.rawQuery("select * from Student", null);
@@ -115,11 +90,6 @@ public class DataHelper extends SQLiteOpenHelper {
     public Cursor getdept(){
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor= db.rawQuery("select * from Dept", null);
-        return cursor;
-    }
-    public Cursor getprof(){
-        SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor= db.rawQuery("select * from Professor", null);
         return cursor;
     }
 }

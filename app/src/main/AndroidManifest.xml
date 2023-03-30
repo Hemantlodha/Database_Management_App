@@ -13,33 +13,6 @@
         android:supportsRtl="true"
         tools:targetApi="31">
         <activity
-            android:name=".delete2"
-            android:exported="false"
-            android:label="Deleting Professor Data"
-            android:parentActivityName=".prof">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".ProfAdd"
-            android:exported="false"
-            android:label="Adding professor data"
-            android:parentActivityName=".prof">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".prof"
-            android:exported="false"
-            android:label="Professor Data"
-            android:parentActivityName=".MainActivity">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
             android:name=".Delete"
             android:exported="false"
             android:label="Deletion"
