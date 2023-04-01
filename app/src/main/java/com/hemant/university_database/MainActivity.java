@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.navigation_open,R.string.navigation_close);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
-        toggle.setDrawerIndicatorEnabled(false);
+        toggle.setDrawerIndicatorEnabled(true);
         db=new DataHelper(this);
         button8.setOnClickListener(new View.OnClickListener() {
             @Override
