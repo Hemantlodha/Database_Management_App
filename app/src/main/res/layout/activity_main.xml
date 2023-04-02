@@ -25,7 +25,7 @@
               android:id="@+id/toolbar"
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
-              app:title="DataBase App"
+              app:title="StuData"
               android:background="@color/cardview_dark_background"
               app:titleTextColor="#F4EED9"
               android:layout_marginBottom="10dp"
