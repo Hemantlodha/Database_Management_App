@@ -29,7 +29,7 @@
               android:background="@color/cardview_dark_background"
               app:titleTextColor="#F4EED9"
               android:layout_marginBottom="10dp"
-              app:titleMarginBottom="14dp"
+              app:titleMarginBottom="15dp"
               app:titleTextAppearance="@style/TextAppearance.AppCompat.Large"
               tools:ignore="MissingConstraints">
           </androidx.appcompat.widget.Toolbar>
