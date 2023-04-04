@@ -11,42 +11,42 @@
     android:id="@+id/drawerlayout"
     android:fitsSystemWindows="true"
     tools:openDrawer="start">
+
     <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigationview"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:id="@+id/navigationview"
+        android:layout_gravity="left"
+        android:backgroundTint="#DEEDE9"
         app:headerLayout="@layout/slide"
-        app:menu="@menu/side_menu"
-        android:layout_gravity="left" >
+        app:menu="@menu/side_menu"></com.google.android.material.navigation.NavigationView>
 
-        <ScrollView
-            android:id="@+id/scrollView4"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"></ScrollView>
-    </com.google.android.material.navigation.NavigationView>
-      <androidx.constraintlayout.widget.ConstraintLayout
-          android:layout_width="match_parent"
-          android:layout_height="match_parent">
-          <androidx.appcompat.widget.Toolbar
-              android:id="@+id/toolbar"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              app:title="StuData"
-              android:background="@color/teal_700"
-              app:titleTextColor="#F4EED9"
-              android:layout_marginBottom="10dp"
-              app:titleMarginBottom="15dp"
-              app:titleTextAppearance="@style/TextAppearance.AppCompat.Large"
-              tools:ignore="MissingConstraints">
-          </androidx.appcompat.widget.Toolbar>
-          <ImageView
-              android:layout_marginTop="1dp"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:src="@drawable/img_5"
-              tools:context=".MainActivity"
-              app:layout_constrainedHeight="true"/>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-      </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="409dp"
+            android:layout_height="57dp"
+            android:background="@color/teal_700"
+            app:title="StuData"
+            app:titleMarginBottom="15dp"
+            app:titleTextAppearance="@style/TextAppearance.AppCompat.Large"
+            app:titleTextColor="#F4EED9"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="1dp"
+            tools:layout_editor_absoluteY="1dp"></androidx.appcompat.widget.Toolbar>
+
+        <ImageView
+            android:layout_width="409dp"
+            android:layout_height="844dp"
+            android:src="@drawable/img_5"
+            app:layout_constrainedHeight="true"
+            app:layout_constraintBaseline_toBaselineOf="parent"
+            tools:context=".MainActivity"
+            tools:layout_editor_absoluteX="1dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.drawerlayout.widget.DrawerLayout>
