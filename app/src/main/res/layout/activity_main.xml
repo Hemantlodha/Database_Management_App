@@ -17,35 +17,31 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="left"
-        android:backgroundTint="#DEEDE9"
+        android:backgroundTint="#A3B0CB"
         app:headerLayout="@layout/slide"
         app:menu="@menu/side_menu"></com.google.android.material.navigation.NavigationView>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="409dp"
-            android:layout_height="57dp"
-            android:background="@color/teal_700"
-            app:title="StuData"
-            app:titleMarginBottom="15dp"
-            app:titleTextAppearance="@style/TextAppearance.AppCompat.Large"
-            app:titleTextColor="#F4EED9"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="1dp"
-            tools:layout_editor_absoluteY="1dp"></androidx.appcompat.widget.Toolbar>
+        android:background="#265B99">
 
-        <ImageView
-            android:layout_width="409dp"
-            android:layout_height="844dp"
-            android:src="@drawable/img_5"
-            app:layout_constrainedHeight="true"
-            app:layout_constraintBaseline_toBaselineOf="parent"
-            tools:context=".MainActivity"
-            tools:layout_editor_absoluteX="1dp" />
+<!--        <androidx.appcompat.widget.Toolbar-->
+<!--            android:id="@+id/toolbar"-->
+<!--            android:layout_width="409dp"-->
+<!--            android:layout_height="48dp"-->
+<!--            android:background="#265B99"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.5"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:title="StuData"-->
+<!--            app:titleMarginBottom="10dp"-->
+<!--            app:titleTextAppearance="@style/TextAppearance.AppCompat.Large"-->
+<!--            app:titleTextColor="@color/white"-->
+<!--            tools:ignore="MissingConstraints"-->
+<!--            tools:layout_editor_absoluteY="1dp"></androidx.appcompat.widget.Toolbar>-->
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

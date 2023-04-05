@@ -12,10 +12,13 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -42,12 +45,12 @@ public class MainActivity extends AppCompatActivity {
 //        button9=findViewById(R.id.button9);
         drawerLayout=findViewById(R.id.drawerlayout);
         navigationView=findViewById(R.id.navigationview);
-        toolbar=findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.navigation_open,R.string.navigation_close);
-        drawerLayout.addDrawerListener(toggle);
-        toggle.syncState();
-        toggle.setDrawerIndicatorEnabled(true);
+//        toolbar=findViewById(R.id.toolbar);
+//        setSupportActionBar(toolbar);
+//        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.navigation_open,R.string.navigation_close);
+//        drawerLayout.addDrawerListener(toggle);
+//        toggle.syncState();
+//        toggle.setDrawerIndicatorEnabled(true);
 //        db=new DataHelper(this);
 //        button8.setOnClickListener(new View.OnClickListener() {
 //            @Override
