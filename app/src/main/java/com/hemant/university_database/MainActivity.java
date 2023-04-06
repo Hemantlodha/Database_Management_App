@@ -45,12 +45,12 @@ public class MainActivity extends AppCompatActivity {
 //        button9=findViewById(R.id.button9);
         drawerLayout=findViewById(R.id.drawerlayout);
         navigationView=findViewById(R.id.navigationview);
-//        toolbar=findViewById(R.id.toolbar);
+        toolbar=findViewById(R.id.toolbar);
 //        setSupportActionBar(toolbar);
-//        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.navigation_open,R.string.navigation_close);
-//        drawerLayout.addDrawerListener(toggle);
-//        toggle.syncState();
-//        toggle.setDrawerIndicatorEnabled(true);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.navigation_open,R.string.navigation_close);
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
+        toggle.setDrawerIndicatorEnabled(true);
 //        db=new DataHelper(this);
 //        button8.setOnClickListener(new View.OnClickListener() {
 //            @Override
