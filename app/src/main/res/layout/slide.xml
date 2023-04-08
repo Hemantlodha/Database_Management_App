@@ -9,8 +9,8 @@
     android:padding="10dp"
     android:paddingTop="10dp">
         <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
             app:srcCompat="@drawable/img"></ImageView>
 
     <TextView

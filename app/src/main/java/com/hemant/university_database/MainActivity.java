@@ -20,6 +20,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -27,7 +28,7 @@ import android.widget.Toast;
 import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity {
-    ImageView button;
+    ImageButton button;
     ImageView button7;
     ImageView button8;
     ImageView button9;
@@ -39,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        button=findViewById(R.id.button);
+        button=findViewById(R.id.imageButton2);
 //        button7=findViewById(R.id.button7);
 //        button8=findViewById(R.id.button8);
 //        button9=findViewById(R.id.button9);
@@ -119,13 +120,13 @@ public class MainActivity extends AppCompatActivity {
 //                }
 //            }
 //        });
-//        button.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(MainActivity.this,Student.class);
-//                startActivity(intent);
-////                Toast.makeText(MainActivity.this, "hello", Toast.LENGTH_SHORT).show();
-//            }
-//        });
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,Student.class);
+                startActivity(intent);
+//                Toast.makeText(MainActivity.this, "hello", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }

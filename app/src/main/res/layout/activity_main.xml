@@ -26,28 +26,42 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
         android:background="#265B99">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="409dp"
             android:layout_height="48dp"
-            android:paddingBottom="1dp"
             android:background="#265B99"
+            android:paddingBottom="1dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintLeft_toRightOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:title="StuData"
             app:subtitleTextColor="#DDE2EF"
+            app:title="StuData"
             app:titleMarginBottom="10dp"
             app:titleTextAppearance="@style/TextAppearance.AppCompat.Large"
             app:titleTextColor="@color/white"
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteY="1dp"></androidx.appcompat.widget.Toolbar>
 
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="152dp"
+            android:paddingLeft="10dp"
+            android:textSize="40sp"
+            android:text="Welcome to the StuData"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textColor="#DDE2EF"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
             android:layout_width="405dp"
             android:layout_height="552dp"
             android:background="@drawable/background_blue"
@@ -59,8 +73,8 @@
             <TableLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingTop="30dp"
-                android:paddingLeft="24dp">
+                android:paddingLeft="24dp"
+                android:paddingTop="30dp">
 
                 <TableRow
                     android:layout_width="match_parent"
@@ -73,20 +87,8 @@
 
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-
-                            <ImageView
-                                android:id="@+id/imageView4"
-                                android:layout_width="70dp"
-                                android:layout_height="70dp"
-                                android:layout_margin="8dp"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintHorizontal_bias="0.5"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"
-                                app:layout_constraintVertical_bias="0.5"
-                                app:srcCompat="@drawable/round_bck" />
+                            android:layout_height="80dp"
+                            android:background="@drawable/btn_background">
 
                             <ImageButton
                                 android:id="@+id/imageButton2"
@@ -96,7 +98,7 @@
                                 android:layout_margin="8dp"
                                 android:backgroundTint="#265B99"
                                 app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="@+id/imageView4"
+                                app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent"
                                 app:srcCompat="@drawable/friend" />
@@ -108,8 +110,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:paddingTop="4dp"
-                            android:textColor="#DDE2EF"
                             android:text="Add Friend"
+                            android:textColor="#DDE2EF"
                             android:textSize="20sp"
                             android:textStyle="bold" />
                     </LinearLayout>
@@ -122,20 +124,8 @@
 
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-
-                            <ImageView
-                                android:id="@+id/imageView5"
-                                android:layout_width="70dp"
-                                android:layout_height="70dp"
-                                android:layout_margin="8dp"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintHorizontal_bias="0.5"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"
-                                app:layout_constraintVertical_bias="0.5"
-                                app:srcCompat="@drawable/round_bck" />
+                            android:layout_height="90dp"
+                            android:background="@drawable/btn_background">
 
                             <ImageButton
                                 android:id="@+id/imageButton3"
@@ -145,7 +135,7 @@
                                 android:layout_margin="8dp"
                                 android:backgroundTint="#265B99"
                                 app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="@+id/imageView5"
+                                app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent"
                                 app:srcCompat="@drawable/friend" />
@@ -171,20 +161,8 @@
 
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-
-                            <ImageView
-                                android:id="@+id/imageView6"
-                                android:layout_width="70dp"
-                                android:layout_height="70dp"
-                                android:layout_margin="8dp"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintHorizontal_bias="0.5"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"
-                                app:layout_constraintVertical_bias="0.5"
-                                app:srcCompat="@drawable/round_bck" />
+                            android:layout_height="90dp"
+                            android:background="@drawable/btn_background">
 
                             <ImageButton
                                 android:id="@+id/imageButton4"
@@ -194,7 +172,7 @@
                                 android:layout_margin="8dp"
                                 android:backgroundTint="#265B99"
                                 app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="@+id/imageView6"
+                                app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent"
                                 app:srcCompat="@drawable/friend" />
@@ -206,12 +184,13 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:paddingTop="4dp"
-                            android:textColor="#DDE2EF"
                             android:text="Add Friend"
+                            android:textColor="#DDE2EF"
                             android:textSize="20sp"
                             android:textStyle="bold" />
                     </LinearLayout>
                 </TableRow>
+
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -224,20 +203,8 @@
 
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-
-                            <ImageView
-                                android:id="@+id/imageView7"
-                                android:layout_width="70dp"
-                                android:layout_height="70dp"
-                                android:layout_margin="8dp"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintHorizontal_bias="0.5"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"
-                                app:layout_constraintVertical_bias="0.5"
-                                app:srcCompat="@drawable/round_bck" />
+                            android:layout_height="90dp"
+                            android:background="@drawable/btn_background">
 
                             <ImageButton
                                 android:id="@+id/imageButton5"
@@ -247,7 +214,7 @@
                                 android:layout_margin="8dp"
                                 android:backgroundTint="#265B99"
                                 app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="@+id/imageView7"
+                                app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent"
                                 app:srcCompat="@drawable/friend" />
@@ -259,8 +226,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:paddingTop="4dp"
-                            android:textColor="#DDE2EF"
                             android:text="Add Friend"
+                            android:textColor="#DDE2EF"
                             android:textSize="20sp"
                             android:textStyle="bold" />
                     </LinearLayout>
@@ -273,20 +240,8 @@
 
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-
-                            <ImageView
-                                android:id="@+id/imageView8"
-                                android:layout_width="70dp"
-                                android:layout_height="70dp"
-                                android:layout_margin="8dp"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintHorizontal_bias="0.5"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"
-                                app:layout_constraintVertical_bias="0.5"
-                                app:srcCompat="@drawable/round_bck" />
+                            android:layout_height="90dp"
+                            android:background="@drawable/btn_background">
 
                             <ImageButton
                                 android:id="@+id/imageButton6"
@@ -296,7 +251,7 @@
                                 android:layout_margin="8dp"
                                 android:backgroundTint="#265B99"
                                 app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="@+id/imageView8"
+                                app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent"
                                 app:srcCompat="@drawable/friend" />
@@ -307,9 +262,9 @@
                             android:id="@+id/textView7"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:textColor="#DDE2EF"
                             android:paddingTop="4dp"
                             android:text="Add Friend"
+                            android:textColor="#DDE2EF"
                             android:textSize="20sp"
                             android:textStyle="bold" />
                     </LinearLayout>
@@ -322,20 +277,8 @@
 
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-
-                            <ImageView
-                                android:id="@+id/imageView9"
-                                android:layout_width="70dp"
-                                android:layout_height="70dp"
-                                android:layout_margin="8dp"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintHorizontal_bias="0.5"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"
-                                app:layout_constraintVertical_bias="0.5"
-                                app:srcCompat="@drawable/round_bck" />
+                            android:layout_height="90dp"
+                            android:background="@drawable/btn_background">
 
                             <ImageButton
                                 android:id="@+id/imageButton7"
@@ -345,7 +288,7 @@
                                 android:layout_margin="8dp"
                                 android:backgroundTint="#265B99"
                                 app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="@+id/imageView9"
+                                app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent"
                                 app:srcCompat="@drawable/friend" />
@@ -356,9 +299,9 @@
                             android:id="@+id/textView8"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:textColor="#DDE2EF"
                             android:paddingTop="4dp"
                             android:text="Add Friend"
+                            android:textColor="#DDE2EF"
                             android:textSize="20sp"
                             android:textStyle="bold" />
                     </LinearLayout>
