@@ -88,6 +88,7 @@
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="80dp"
                             android:layout_height="80dp"
+                            android:layout_gravity="center"
                             android:background="@drawable/btn_background">
 
                             <ImageButton
@@ -117,14 +118,16 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:layout_width="110dp"
+                        android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
-                        android:paddingLeft="27dp">
+                        android:layout_marginLeft="25dp"
+                       >
 
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="80dp"
                             android:layout_height="80dp"
+                            android:layout_gravity="center"
                             android:background="@drawable/btn_background">
 
                             <ImageButton
@@ -144,7 +147,7 @@
 
                         <TextView
                             android:id="@+id/textView4"
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingTop="4dp"
                             android:text="Add Friend"
@@ -157,11 +160,12 @@
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
-                        android:paddingLeft="27dp">
+                        android:layout_marginLeft="25dp">
 
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="80dp"
                             android:layout_height="80dp"
+                            android:layout_gravity="center"
                             android:background="@drawable/btn_background">
 
                             <ImageButton
@@ -204,6 +208,7 @@
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="80dp"
                             android:layout_height="80dp"
+                            android:layout_gravity="center"
                             android:background="@drawable/btn_background">
 
                             <ImageButton
@@ -236,11 +241,12 @@
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
-                        android:paddingLeft="27dp">
+                        android:layout_marginLeft="25dp">
 
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="80dp"
                             android:layout_height="80dp"
+                            android:layout_gravity="center"
                             android:background="@drawable/btn_background">
 
                             <ImageButton
@@ -273,11 +279,12 @@
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
-                        android:paddingLeft="37dp">
+                        android:layout_marginLeft="25dp">
 
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="80dp"
                             android:layout_height="80dp"
+                            android:layout_gravity="center"
                             android:background="@drawable/btn_background">
 
                             <ImageButton
