@@ -11,7 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class splashscreen extends AppCompatActivity {
-    private static int timer=1500;
+    private static int timer=2200;
     ImageView imageView;
     TextView textView,textView1;
     Animation animation,upanim;
