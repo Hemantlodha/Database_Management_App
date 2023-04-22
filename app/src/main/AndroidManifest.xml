@@ -15,7 +15,7 @@
         <activity
             android:name=".login"
             android:exported="false"
-            android:theme="@style/Theme.Design.NoActionBar"/>
+            android:theme="@style/Theme.University_dataBase."/>
         <activity
             android:name=".splashscreen"
             android:exported="true"
