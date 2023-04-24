@@ -1,4 +1,4 @@
-# Database_Management_App
+# Student_Database_Management_App
 ### ***This is sample of app which provides the user to keep it data in the university for various roles like student professor.***
 ### ***Language:  Java, MySQL and XML***
 ----
