@@ -80,6 +80,7 @@
             android:layout_width="100dp"
             android:layout_height="match_parent"
             android:text="remember me"
+
             android:textColor="@color/white"/>
 
     </LinearLayout>
