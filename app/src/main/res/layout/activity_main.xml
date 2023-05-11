@@ -26,13 +26,13 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#265B99">
+        android:background="@color/apptheme">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="409dp"
             android:layout_height="48dp"
-            android:background="#265B99"
+            android:background="@color/apptheme"
             android:paddingBottom="1dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
