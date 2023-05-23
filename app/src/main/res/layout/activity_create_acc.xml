@@ -7,7 +7,13 @@
     android:background="@color/apptheme"
     android:padding="25dp"
     tools:context=".login">
-
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
@@ -26,20 +32,73 @@
             android:text="CREATE ACCOUNT"
             android:textColor="@color/white"
             android:textSize="40dp" />
-
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter Username"
-            android:paddingTop="74dp"
+            android:hint="Provide Username"
+            android:textColorHint="@color/white"
+            app:boxStrokeColor="@color/white"
+            app:boxStrokeWidthFocused="2dp"
+            android:layout_marginTop="50dp"
+            app:endIconMode="clear_text"
+            app:endIconTint="@color/white"
+            app:layout_constraintTop_toBottomOf="@+id/textview12"
+            app:startIconDrawable="@drawable/ic_baseline_person_outline_24"
+            app:startIconTint="@color/white">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/vollkorn_semibold_italic"
+                android:inputType="text"
+                android:textColor="@color/white" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.hbb20.CountryCodePicker
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/whiteborder"
+            app:ccp_showFlag="true"
+            app:ccp_showNameCode="true"
+            app:ccp_showFullName="true"
+            android:layout_marginTop="9dp"
+            app:ccpDialog_backgroundColor="@color/apptheme"
+            app:ccpDialog_fastScroller_bubbleColor="@color/white"
+            app:ccpDialog_textColor="@color/white"
+            app:ccp_contentColor="@color/white"/>
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Phone Number"
             android:textColorHint="@color/white"
             app:boxStrokeColor="@color/white"
             app:boxStrokeWidthFocused="2dp"
             app:endIconMode="clear_text"
             app:endIconTint="@color/white"
             app:layout_constraintTop_toBottomOf="@+id/textview12"
-            app:startIconDrawable="@drawable/ic_baseline_person_outline_24"
+            app:startIconDrawable="@drawable/baseline_local_phone_24"
+            app:startIconTint="@color/white">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/vollkorn_semibold_italic"
+                android:inputType="text"
+                android:textColor="@color/white" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Gmail id"
+            android:textColorHint="@color/white"
+            app:boxStrokeColor="@color/white"
+            app:boxStrokeWidthFocused="2dp"
+            app:endIconMode="clear_text"
+            app:endIconTint="@color/white"
+            app:layout_constraintTop_toBottomOf="@+id/textview12"
+            app:startIconDrawable="@drawable/baseline_mail_outline_24"
             app:startIconTint="@color/white">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -58,8 +117,29 @@
             android:textColorHint="@color/white"
             app:boxStrokeColor="@color/white"
             app:boxStrokeWidthFocused="2dp"
-            app:endIconMode="clear_text"
-            app:endIconTint="@color/white"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/white"
+            app:layout_constraintTop_toBottomOf="@+id/textview12"
+            app:startIconDrawable="@drawable/lock"
+            app:startIconTint="@color/white">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/vollkorn_semibold_italic"
+                android:inputType="text"
+                android:textColor="@color/white" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Confirm Password"
+            android:textColorHint="@color/white"
+            app:boxStrokeColor="@color/white"
+            app:boxStrokeWidthFocused="2dp"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/white"
             app:layout_constraintTop_toBottomOf="@+id/textview12"
             app:startIconDrawable="@drawable/lock"
             app:startIconTint="@color/white">
@@ -73,53 +153,17 @@
         </com.google.android.material.textfield.TextInputLayout>
     </LinearLayout>
 
-    <RelativeLayout
-        android:id="@+id/relativeLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        tools:layout_editor_absoluteX="25dp">
-
-        <CheckBox
-            style="@style/Widget.AppCompat.CompoundButton.CheckBox"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:buttonTint="@color/white"
-            android:text="Remember me"
-            android:textColor="@color/white"></CheckBox>
-
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:backgroundTint="@color/apptheme"
-            android:text="forgot password"
-            android:textColor="@color/white" />
-
-    </RelativeLayout>
-
     <Button
-        android:id="@+id/button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:backgroundTint="@color/white"
-        android:text="Login"
-        android:textColor="@color/apptheme"
-        app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
-        tools:layout_editor_absoluteX="25dp" />
-
-    <Button
-        android:id="@+id/button7"
+        android:id="@+id/button8"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/white"
         android:text="Create Account"
+        android:layout_marginTop="25dp"
         android:textColor="@color/apptheme"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        tools:layout_editor_absoluteX="25dp" />
+        </LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
 

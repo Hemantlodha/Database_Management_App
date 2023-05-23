@@ -7,7 +7,13 @@
     android:background="@color/apptheme"
     android:padding="25dp"
     tools:context=".login">
-
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
@@ -58,8 +64,8 @@
             android:textColorHint="@color/white"
             app:boxStrokeColor="@color/white"
             app:boxStrokeWidthFocused="2dp"
-            app:endIconMode="clear_text"
-            app:endIconTint="@color/white"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/white"
             app:layout_constraintTop_toBottomOf="@+id/textview12"
             app:startIconDrawable="@drawable/lock"
             app:startIconTint="@color/white">
@@ -101,16 +107,17 @@
 
     </RelativeLayout>
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:backgroundTint="@color/white"
-        android:text="Login"
-        android:textColor="@color/apptheme"
-        app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
-        tools:layout_editor_absoluteX="25dp" />
+            <Button
+                android:id="@+id/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="@color/white"
+                android:text="Login"
+                android:textColor="@color/apptheme"
+                android:layout_gravity="center"
+                app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
+                tools:layout_editor_absoluteX="25dp" />
 
     <Button
         android:id="@+id/button7"
@@ -118,8 +125,11 @@
         android:layout_height="wrap_content"
         android:backgroundTint="@color/white"
         android:text="Create Account"
+        android:layout_gravity="center"
         android:textColor="@color/apptheme"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button" />
+        </LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
 

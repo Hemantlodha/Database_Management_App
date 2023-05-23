@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "606071387654",
+    "project_id": "university-database-39043",
+    "storage_bucket": "university-database-39043.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:606071387654:android:82c4eb96c73bea5a5eb587",
+        "android_client_info": {
+          "package_name": "com.hemant.university_database"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "606071387654-56k6jejc93mntoppnbad58qhv9f8jn44.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDqhMO8-ZvWW6FAkRzDiwOWr-UVbJaEiNY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "606071387654-56k6jejc93mntoppnbad58qhv9f8jn44.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
