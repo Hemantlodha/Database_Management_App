@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.CheckBox;
 
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.database.DataSnapshot;
@@ -20,6 +21,7 @@ import com.google.firebase.database.ValueEventListener;
 public class login extends AppCompatActivity {
      Button button;
      Button button7;
+     CheckBox remem;
      TextInputLayout user;
      TextInputLayout pass;
     @Override
