@@ -9,6 +9,7 @@ public class storing_data {
         this.phone=phone;
         this.gmail=gmail;
         this.password=password;
+
     }
     public String getPhone() {
         return phone;
