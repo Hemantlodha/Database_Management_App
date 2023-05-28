@@ -33,6 +33,7 @@ public class login extends AppCompatActivity {
         button7=findViewById(R.id.button7);
         user=findViewById(R.id.user);
         pass=findViewById(R.id.pass);
+        remem=findViewById(R.id.remem);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
