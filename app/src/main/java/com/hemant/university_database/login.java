@@ -4,11 +4,14 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.database.DataSnapshot;
@@ -34,6 +37,16 @@ public class login extends AppCompatActivity {
         user=findViewById(R.id.user);
         pass=findViewById(R.id.pass);
         remem=findViewById(R.id.remem);
+        SharedPreferences sharedPreferences=getSharedPreferences("checkbox",MODE_PRIVATE);
+        String checkbox=sharedPreferences.getString("remember","");
+        if(checkbox=="true"){
+            Intent intent = new Intent(login.this, MainActivity.class);
+            startActivity(intent);
+            finish();
+        }
+        else{
+            Toast.makeText(this, "Please login", Toast.LENGTH_SHORT).show();
+        }
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -77,6 +90,25 @@ public class login extends AppCompatActivity {
                 else
                 {
                   user.setError("Please enter the username");
+                }
+            }
+        });
+        remem.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if(compoundButton.isChecked()){
+                    SharedPreferences sharedPreferences=getSharedPreferences("checkbox",MODE_PRIVATE);
+                    SharedPreferences.Editor editor=sharedPreferences.edit();
+                    editor.putString("remember","true");
+                    editor.apply();
+                    Toast.makeText(login.this, "Checked", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    SharedPreferences sharedPreferences=getSharedPreferences("checkbox",MODE_PRIVATE);
+                    SharedPreferences.Editor editor=sharedPreferences.edit();
+                    editor.putString("remember","false");
+                    editor.apply();
+                    Toast.makeText(login.this, "UnChecked", Toast.LENGTH_SHORT).show();
                 }
             }
         });
