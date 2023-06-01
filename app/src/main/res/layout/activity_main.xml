@@ -309,7 +309,7 @@
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent"
-                                app:srcCompat="@drawable/friend" />
+                                app:srcCompat="@drawable/baseline_logout_24" />
 
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -318,7 +318,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:paddingTop="4dp"
-                            android:text="Add Friend"
+                            android:gravity="center"
+                            android:text="Logout"
                             android:textColor="#DDE2EF"
                             android:textSize="20sp"
                             android:textStyle="bold" />
