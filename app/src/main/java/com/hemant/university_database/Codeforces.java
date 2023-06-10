@@ -18,11 +18,12 @@ import com.android.volley.toolbox.Volley;
 import java.util.AbstractCollection;
 
 public class Codeforces extends AppCompatActivity {
-    String api="https://codeforces.com/api";
+    String api=" https://codeforces.com/api/user.info?handles=hemantlodha1000";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_codeforces);
+        getData();
     }
     private void getData() {
         // RequestQueue initialized
@@ -38,6 +39,7 @@ public class Codeforces extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
+                Toast.makeText(Codeforces.this, "Error", Toast.LENGTH_SHORT).show();
                 Log.i(TAG, "Error :" + error.toString());
             }
         });

@@ -29,6 +29,7 @@ import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity {
     ImageButton button;
+    ImageButton imageButton;
     ImageView button7;
     ImageView button8;
     ImageView button9;
@@ -41,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         button=findViewById(R.id.imageButton2);
+        imageButton=findViewById(R.id.imageButton3);
 //        button7=findViewById(R.id.button7);
 //        button8=findViewById(R.id.button8);
 //        button9=findViewById(R.id.button9);
@@ -120,6 +122,13 @@ public class MainActivity extends AppCompatActivity {
 //                }
 //            }
 //        });
+        imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(MainActivity.this,Codeforces.class);
+                startActivity(intent);
+            }
+        });
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
