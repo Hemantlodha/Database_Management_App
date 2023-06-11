@@ -33,7 +33,7 @@ public class Codeforces extends AppCompatActivity {
         StringRequest mStringRequest = new StringRequest(Request.Method.GET, api, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-
+                String data=response.toString();
                 Toast.makeText(getApplicationContext(), "Response :" + response.toString(), Toast.LENGTH_LONG).show();//display the response on screen
             }
         }, new Response.ErrorListener() {
