@@ -34,7 +34,8 @@ public class Codeforces extends AppCompatActivity {
             @Override
             public void onResponse(String response) {
                 String data=response.toString();
-                Toast.makeText(getApplicationContext(), "Response :" + response.toString(), Toast.LENGTH_LONG).show();//display the response on screen
+                int lastn=data.indexOf("lastName");
+                Toast.makeText(getApplicationContext(), "Response :" + lastn, Toast.LENGTH_LONG).show();//display the response on screen
             }
         }, new Response.ErrorListener() {
             @Override
