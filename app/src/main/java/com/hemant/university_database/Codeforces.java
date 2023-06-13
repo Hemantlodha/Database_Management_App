@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -19,6 +20,7 @@ import java.util.AbstractCollection;
 
 public class Codeforces extends AppCompatActivity {
     String api=" https://codeforces.com/api/user.info?handles=hemantlodha1000";
+    TextView textView,textView12;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,13 +30,31 @@ public class Codeforces extends AppCompatActivity {
     private void getData() {
         // RequestQueue initialized
         RequestQueue mRequestQueue = Volley.newRequestQueue(this);
-
+        textView=findViewById(R.id.textView9);
+        textView12=findViewById(R.id.textView12);
         // String Request initialized
         StringRequest mStringRequest = new StringRequest(Request.Method.GET, api, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 String data=response.toString();
-                int lastn=data.indexOf("lastName");
+                int lastn=data.indexOf("rank");
+                lastn+=7;
+                String rank="";
+                while(data.charAt(lastn)!='\"') {
+                    rank += data.charAt(lastn);
+                    lastn++;
+                }
+                textView.setText(rank);
+                lastn=data.indexOf("handle");
+                lastn+=9;
+                rank="";
+                while(data.charAt(lastn)!='\"')
+                {
+                    rank+=data.charAt(lastn);
+                    lastn++;
+                }
+                textView12.setText(rank);
+                textView12.setTextSize(30);
                 Toast.makeText(getApplicationContext(), "Response :" + lastn, Toast.LENGTH_LONG).show();//display the response on screen
             }
         }, new Response.ErrorListener() {
