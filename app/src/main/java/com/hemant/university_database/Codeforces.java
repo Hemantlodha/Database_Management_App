@@ -4,6 +4,7 @@ import static android.content.ContentValues.TAG;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
@@ -54,7 +55,9 @@ public class Codeforces extends AppCompatActivity {
                     lastn++;
                 }
                 textView12.setText(rank);
+                textView.setTextColor(Color.rgb(15, 208, 212));
                 textView12.setTextSize(30);
+                textView12.setTextColor(Color.rgb(15, 208, 212));
                 Toast.makeText(getApplicationContext(), "Response :" + lastn, Toast.LENGTH_LONG).show();//display the response on screen
             }
         }, new Response.ErrorListener() {

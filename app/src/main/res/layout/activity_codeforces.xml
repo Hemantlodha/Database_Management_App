@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/apptheme"
+    android:background="#2b3333"
     tools:context=".Codeforces">
 
     <ScrollView
@@ -20,13 +20,16 @@
                 android:id="@+id/textView9"
                 android:layout_width="85dp"
                 android:layout_height="42dp"
-                android:text="TextView" />
+                android:text="TextView"
+                android:textStyle="bold"
+                />
 
             <TextView
                 android:id="@+id/textView12"
                 android:layout_width="match_parent"
                 android:layout_height="38dp"
-                android:text="TextView" />
+                android:text="TextView"
+                android:textStyle="bold"/>
         </LinearLayout>
     </ScrollView>
 
