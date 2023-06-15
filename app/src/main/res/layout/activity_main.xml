@@ -27,6 +27,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/apptheme">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="409dp"
@@ -63,6 +70,7 @@
             android:layout_width="395dp"
             android:layout_height="552dp"
             android:background="@drawable/background_blue"
+            android:layout_gravity="center"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -364,7 +372,8 @@
                 </androidx.cardview.widget.CardView>
             </RelativeLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
-
+        </LinearLayout>
+        </ScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.drawerlayout.widget.DrawerLayout>

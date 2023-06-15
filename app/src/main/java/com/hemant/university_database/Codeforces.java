@@ -18,6 +18,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
 import java.util.AbstractCollection;
+import java.util.ArrayList;
 
 public class Codeforces extends AppCompatActivity {
     String api=" https://codeforces.com/api/user.info?handles=hemantlodha1000";
@@ -37,28 +38,23 @@ public class Codeforces extends AppCompatActivity {
         StringRequest mStringRequest = new StringRequest(Request.Method.GET, api, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
+                String user[] = new String[]{"rank","handle"};
+                ArrayList<String> val=new ArrayList<>();
                 String data=response.toString();
-                int lastn=data.indexOf("rank");
-                lastn+=7;
-                String rank="";
-                while(data.charAt(lastn)!='\"') {
-                    rank += data.charAt(lastn);
-                    lastn++;
+                for(String key:user) {
+                    int lastn = data.indexOf(key) + key.length()+1;
+                    String rank = "";
+                    while (data.charAt(lastn) != '\"') {
+                        rank += data.charAt(lastn);
+                        lastn++;
+                    }
+                  val.add(rank);
                 }
-                textView.setText(rank);
-                lastn=data.indexOf("handle");
-                lastn+=9;
-                rank="";
-                while(data.charAt(lastn)!='\"')
-                {
-                    rank+=data.charAt(lastn);
-                    lastn++;
-                }
-                textView12.setText(rank);
+                textView.setText(val.get(0));
+                textView12.setText(val.get(1));
                 textView.setTextColor(Color.rgb(15, 208, 212));
                 textView12.setTextSize(30);
                 textView12.setTextColor(Color.rgb(15, 208, 212));
-                Toast.makeText(getApplicationContext(), "Response :" + lastn, Toast.LENGTH_LONG).show();//display the response on screen
             }
         }, new Response.ErrorListener() {
             @Override
