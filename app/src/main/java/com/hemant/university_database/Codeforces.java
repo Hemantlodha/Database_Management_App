@@ -42,7 +42,7 @@ public class Codeforces extends AppCompatActivity {
                 ArrayList<String> val=new ArrayList<>();
                 String data=response.toString();
                 for(String key:user) {
-                    int lastn = data.indexOf(key) + key.length()+1;
+                    int lastn = data.indexOf(key) + key.length()+3;
                     String rank = "";
                     while (data.charAt(lastn) != '\"') {
                         rank += data.charAt(lastn);
