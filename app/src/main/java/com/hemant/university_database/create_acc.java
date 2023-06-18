@@ -1,5 +1,6 @@
 package com.hemant.university_database;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
@@ -9,7 +10,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -17,6 +22,7 @@ public class create_acc extends AppCompatActivity {
     Button button8;
     TextInputLayout username,phone,gmail,password,passc;
     FirebaseDatabase firebaseDatabase;
+    private FirebaseAuth mAuth;
     DatabaseReference reference;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,14 +48,24 @@ public class create_acc extends AppCompatActivity {
                             if(!p1.isEmpty()) {
                                 if(!p2.isEmpty()) {
                                     if(p1.equalsIgnoreCase(p2)){
-                                        firebaseDatabase=FirebaseDatabase.getInstance();
-                                        reference=firebaseDatabase.getReference("Studata user");
-                                        storing_data str= new storing_data(user,pho,gma,p1);
-                                        reference.child(user).setValue(str);
-                                        Toast.makeText(create_acc.this, "Account is created", Toast.LENGTH_SHORT).show();
-                                        Intent intent= new Intent(create_acc.this,login.class);
-                                        startActivity(intent);
-                                        finish();
+                                        mAuth = FirebaseAuth.getInstance();
+                                        mAuth.createUserWithEmailAndPassword(gma, p1)
+                                                .addOnCompleteListener(create_acc.this, new OnCompleteListener<AuthResult>() {
+                                                    @Override
+                                                    public void onComplete(@NonNull Task<AuthResult> task) {
+                                                        if (task.isSuccessful()) {
+                                                            // Sign in success, update UI with the signed-in user's information
+                                                            firebaseDatabase=FirebaseDatabase.getInstance();
+                                                            reference=firebaseDatabase.getReference("Studata user");
+                                                            storing_data str= new storing_data(user,pho,gma,p1);
+                                                            reference.child(user).setValue(str);
+                                                            Toast.makeText(create_acc.this, "Account is created", Toast.LENGTH_SHORT).show();
+                                                            Intent intent= new Intent(create_acc.this,login.class);
+                                                            startActivity(intent);
+                                                            finish();
+                                                        }
+                                                    }
+                                                });
                                     }
                                     else{
                                         passc.setError("password does not match");
