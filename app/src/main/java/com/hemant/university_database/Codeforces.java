@@ -22,7 +22,7 @@ import java.util.ArrayList;
 
 public class Codeforces extends AppCompatActivity {
     String api=" https://codeforces.com/api/user.info?handles=hemantlodha1000";
-    TextView textView,textView12,textView13;
+    TextView textView,textView12,textView13,textView14;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,11 +35,12 @@ public class Codeforces extends AppCompatActivity {
         textView=findViewById(R.id.textView9);
         textView12=findViewById(R.id.textView12);
         textView13=findViewById(R.id.textView13);
+        textView14=findViewById(R.id.textView14);
         // String Request initialized
         StringRequest mStringRequest = new StringRequest(Request.Method.GET, api, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                String user[] = new String[]{"rank","handle","firstName","lastName","city","country"};
+                String user[] = new String[]{"rank","handle","firstName","lastName","city","country","organization"};
                 ArrayList<String> val=new ArrayList<>();
                 String data=response.toString();
                 for(String key:user) {
@@ -49,11 +50,14 @@ public class Codeforces extends AppCompatActivity {
                         rank += data.charAt(lastn);
                         lastn++;
                     }
+                    if(val.size()==0)
+                        rank=rank.substring(0, 1).toUpperCase() + rank.substring(1).toLowerCase();
                   val.add(rank);
                 }
                 textView.setText(val.get(0));
                 textView12.setText(val.get(1));
-                textView13.setText(val.get(2)+" "+val.get(3)+","+val.get(4)+","+val.get(5));
+                textView13.setText(val.get(2)+" "+val.get(3)+", "+val.get(4)+", "+val.get(5));
+                textView14.setText("From "+val.get(6));
                 textView.setTextColor(Color.rgb(15, 208, 212));
                 textView12.setTextSize(30);
                 textView12.setTextColor(Color.rgb(15, 208, 212));
