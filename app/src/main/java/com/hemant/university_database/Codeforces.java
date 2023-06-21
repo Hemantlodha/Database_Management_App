@@ -27,7 +27,7 @@ import java.util.ArrayList;
 
 public class Codeforces extends AppCompatActivity {
     String api=" https://codeforces.com/api/user.info?handles=hemantlodha1000";
-    TextView textView,textView12,textView13,textView14,textView15;
+    TextView textView,textView12,textView13,textView14,textView15,textView16;
     ImageView imageView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,17 +44,18 @@ public class Codeforces extends AppCompatActivity {
         textView14=findViewById(R.id.textView14);
         imageView=findViewById(R.id.imageView3);
         textView15=findViewById(R.id.textView15);
+        textView16=findViewById(R.id.textView16);
         // String Request initialized
         StringRequest mStringRequest = new StringRequest(Request.Method.GET, api, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                String user[] = new String[]{"rank","handle","firstName","lastName","city","country","organization","titlePhoto","rating"};
+                String user[] = new String[]{"rank","handle","firstName","lastName","city","country","organization","titlePhoto","rating","maxRank","maxRating"};
                 ArrayList<String> val=new ArrayList<>();
                 String data=response.toString();
                 for(String key:user) {
                     int lastn = data.indexOf(key) + key.length()+3;
                     String rank = "";
-                    while (data.charAt(lastn) != '\"') {
+                    while (data.charAt(lastn) != '\"' || data.charAt(lastn) != ',') {
                         rank += data.charAt(lastn);
                         lastn++;
                     }
@@ -77,7 +78,9 @@ public class Codeforces extends AppCompatActivity {
                 textView14.setText("From "+val.get(6));
                 textView.setTextColor(Color.rgb(15, 208, 212));
                 textView12.setTextSize(30);
-                textView15.setText(val.get(8));
+                textView15.setText("Contest rating: "+val.get(8));
+                textView16.setText("(max. "+val.get(9)+", "+val.get(10));
+
                 textView12.setTextColor(Color.rgb(15, 208, 212));
             }
         }, new Response.ErrorListener() {

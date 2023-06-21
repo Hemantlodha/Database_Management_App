@@ -48,6 +48,9 @@ public class create_acc extends AppCompatActivity {
                             if(!p1.isEmpty()) {
                                 if(!p2.isEmpty()) {
                                     if(p1.equalsIgnoreCase(p2)){
+                                        Intent intent= new Intent(create_acc.this,otp.class);
+                                        startActivity(intent);
+                                        finish();
                                         mAuth = FirebaseAuth.getInstance();
                                         mAuth.createUserWithEmailAndPassword(gma, p1)
                                                 .addOnCompleteListener(create_acc.this, new OnCompleteListener<AuthResult>() {
@@ -55,10 +58,10 @@ public class create_acc extends AppCompatActivity {
                                                     public void onComplete(@NonNull Task<AuthResult> task) {
                                                         if (task.isSuccessful()) {
                                                             // Sign in success, update UI with the signed-in user's information
-                                                            firebaseDatabase=FirebaseDatabase.getInstance();
-                                                            reference=firebaseDatabase.getReference("Studata user");
-                                                            storing_data str= new storing_data(user,pho,gma,p1);
-                                                            reference.child(user).setValue(str);
+//                                                            firebaseDatabase=FirebaseDatabase.getInstance();
+//                                                            reference=firebaseDatabase.getReference("Studata user");
+//                                                            storing_data str= new storing_data(user,pho,gma,p1);
+//                                                            reference.child(user).setValue(str);
                                                             Toast.makeText(create_acc.this, "Account is created", Toast.LENGTH_SHORT).show();
                                                             Intent intent= new Intent(create_acc.this,login.class);
                                                             startActivity(intent);
