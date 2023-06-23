@@ -29,52 +29,19 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.concurrent.TimeUnit;
 
 public class create_acc extends AppCompatActivity {
-    Button button8,button11;
+    Button button8;
     TextInputLayout username,phone,gmail,password,passc;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_acc);
         button8=findViewById(R.id.button8);
-        button11=findViewById(R.id.button11);
         username=findViewById(R.id.Username);
         phone=findViewById(R.id.phone);
         gmail=findViewById(R.id.gmail);
         password=findViewById(R.id.password);
         passc=findViewById(R.id.passc);
         ProgressBar progressBar=findViewById(R.id.progress);
-        ProgressBar progressBar1=findViewById(R.id.progress1);
-        button11.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                button11.setVisibility(View.INVISIBLE);
-                progressBar1.setVisibility(View.VISIBLE);
-                String email=gmail.getEditText().getText().toString();
-                ActionCodeSettings actionCodeSettings =
-                        ActionCodeSettings.newBuilder()
-                                // URL you want to redirect back to. The domain (www.example.com) for this
-                                // URL must be whitelisted in the Firebase Console.
-                                .setUrl("https://www.example.com/finishSignUp?cartId=1234")
-                                // This must be true
-                                .setHandleCodeInApp(true)
-                                .setIOSBundleId("com.example.ios")
-                                .setAndroidPackageName(
-                                        "com.example.android",
-                                        true, /* installIfNotAvailable */
-                                        "12"    /* minimumVersion */)
-                                .build();
-                FirebaseAuth auth = FirebaseAuth.getInstance();
-                auth.sendSignInLinkToEmail(email, actionCodeSettings)
-                        .addOnCompleteListener(new OnCompleteListener<Void>() {
-                            @Override
-                            public void onComplete(@NonNull Task<Void> task) {
-                                if (task.isSuccessful()) {
-                                    Toast.makeText(create_acc.this, "Mail is sent", Toast.LENGTH_SHORT).show();
-                                }
-                            }
-                        });
-            }
-        });
         button8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

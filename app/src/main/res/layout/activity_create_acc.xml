@@ -165,7 +165,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/white"
-        android:text="Create Account by number"
+        android:text="Create Account"
         android:layout_marginTop="25dp"
         android:textColor="@color/apptheme"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
@@ -178,26 +178,6 @@
            android:progressBackgroundTint="@color/white"
            android:visibility="gone"/>
    </FrameLayout>
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <Button
-                    android:id="@+id/button11"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="@color/white"
-                    android:text="Create Account by mail"
-                    android:textColor="@color/apptheme"
-                    app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-                    tools:layout_editor_absoluteX="25dp" />
-                <ProgressBar
-                    android:id="@+id/progress1"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_gravity="center"
-                    android:progressBackgroundTint="@color/white"
-                    android:visibility="gone"/>
-            </FrameLayout>
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

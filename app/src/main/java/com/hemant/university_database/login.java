@@ -56,9 +56,14 @@ public class login extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
-                                    Intent intent = new Intent(login.this, MainActivity.class);
-                                    startActivity(intent);
-                                    finish();
+                                    if(mAuth.getCurrentUser().isEmailVerified()) {
+                                        Intent intent = new Intent(login.this, MainActivity.class);
+                                        startActivity(intent);
+                                        finish();
+                                    }
+                                    else{
+                                        Toast.makeText(login.this, "Please verify your gmail", Toast.LENGTH_SHORT).show();
+                                    }
                                 } else {
                                     Toast.makeText(login.this, "The Credentials are wrong", Toast.LENGTH_SHORT).show();
                                 }

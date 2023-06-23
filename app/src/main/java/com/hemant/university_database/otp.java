@@ -64,6 +64,18 @@ public class otp extends AppCompatActivity {
 //                                      reference=firebaseDatabase.getReference("Studata user");
 //                                      storing_data str= new storing_data(user,pho,gma,p1);
 //                                      reference.child(user).setValue(str);
+                                                  mAuth.getCurrentUser().sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                      @Override
+                                                      public void onComplete(@NonNull Task<Void> task) {
+                                                          if(task.isSuccessful())
+                                                          {
+                                                              Toast.makeText(otp.this, "Email sent", Toast.LENGTH_SHORT).show();
+                                                          }
+                                                          else{
+                                                              Toast.makeText(otp.this, "Error occured", Toast.LENGTH_SHORT).show();
+                                                          }
+                                                      }
+                                                  });
                                                   Toast.makeText(otp.this, "Account is created", Toast.LENGTH_SHORT).show();
                                                   Intent intent= new Intent(otp.this,login.class);
                                                   startActivity(intent);
