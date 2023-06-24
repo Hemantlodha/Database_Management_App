@@ -39,11 +39,12 @@ public class login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_login);
-        rem();
+        remem=findViewById(R.id.remem);
         button=findViewById(R.id.button);
         button7=findViewById(R.id.button7);
         user=findViewById(R.id.user);
         pass=findViewById(R.id.pass);
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -87,20 +88,5 @@ public class login extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-    }
-    public void rem() {
-        // Check if user is signed in (non-null) and update UI accordingly.
-        try {
-            FirebaseUser currentUser = mAuth.getCurrentUser();
-            if (currentUser != null) {
-                Intent intent = new Intent(login.this, MainActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        }
-        catch (Exception e)
-        {
-            Toast.makeText(this, "Ala re ala exception ala", Toast.LENGTH_SHORT).show();
-        }
     }
 }
