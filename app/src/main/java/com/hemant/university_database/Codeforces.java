@@ -108,7 +108,6 @@ public class Codeforces extends AppCompatActivity {
                 textView16.setText("(max. "+val.get(8)+", "+val.get(10)+")");
                 textView17.setText("Contribution : "+val.get(11));
                 textView22.setText("FriendOfCount : "+val.get(12));
-
                 textView12.setTextColor(Color.rgb(15, 208, 212));
             }
         }, new Response.ErrorListener() {
