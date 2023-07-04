@@ -29,7 +29,7 @@ import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity {
     ImageButton button;
-    ImageButton imageButton;
+    ImageButton imageButton,button5,button4;
     ImageView button7;
     ImageView button8;
     ImageView button9;
@@ -43,8 +43,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         button=findViewById(R.id.imageButton2);
         imageButton=findViewById(R.id.imageButton3);
-//        button7=findViewById(R.id.button7);
-//        button8=findViewById(R.id.button8);
+        button5=findViewById(R.id.imageButton5);
+        button4=findViewById(R.id.imageButton4);
 //        button9=findViewById(R.id.button9);
         drawerLayout=findViewById(R.id.drawerlayout);
         navigationView=findViewById(R.id.navigationview);
@@ -132,9 +132,23 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this,Student.class);
+                Intent intent = new Intent(MainActivity.this,Add.class);
                 startActivity(intent);
 //                Toast.makeText(MainActivity.this, "hello", Toast.LENGTH_SHORT).show();
+            }
+        });
+        button5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(MainActivity.this,Student.class);
+                startActivity(intent);
+            }
+        });
+        button4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(MainActivity.this,Delete.class);
+                startActivity(intent);
             }
         });
     }
