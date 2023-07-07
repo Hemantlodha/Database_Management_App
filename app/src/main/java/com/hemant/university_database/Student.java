@@ -47,19 +47,5 @@ public class Student extends AppCompatActivity {
                 b.show();
             }
         });
-        button2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Student.this,Add.class);
-                startActivity(intent);
-            }
-        });
-        button6.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Student.this,Delete.class);
-                startActivity(intent);
-            }
-        });
     }
 }
