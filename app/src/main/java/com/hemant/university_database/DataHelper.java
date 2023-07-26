@@ -23,17 +23,12 @@ public class DataHelper extends SQLiteOpenHelper {
     }
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table Student(name TEXT,Scholar_no integer Primary Key,course_id TEXT not null,dob TEXT,Year_en TEXT,foreign key(course_id) references Course(course_id))");
-        db.execSQL("create table Course(c_name TEXT ,course_id TEXT Primary Key,no_of_Student integer,dura integer)");
-        db.execSQL("create table Dept(d_name TEXT ,dept_id TEXT Primary Key,no_of_Student integer,HOD TEXT)");
+        db.execSQL("create table Student(name TEXT,Scholar_no integer Primary Key,course_id TEXT,dob TEXT,Year_en TEXT)");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
          db.execSQL("drop table if exists Student");
-         db.execSQL("drop table if exists Course");
-        db.execSQL("drop table if exists Dept");
-        db.execSQL("drop table if exists Professor");
     }
     public boolean insertdata(String name, int scholar_no, String course_id, String dob,String Year_en){
         SQLiteDatabase db = this.getWritableDatabase();
@@ -47,24 +42,6 @@ public class DataHelper extends SQLiteOpenHelper {
         if(result==-1)
             return false;
         return true;
-    }
-    public void insertcourse(String c_name,String course_id, int no_of_Student,int dura){
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues cv = new ContentValues();
-        cv.put("c_name",c_name);
-        cv.put("course_id",course_id);
-        cv.put("no_of_Student",no_of_Student);
-        cv.put("dura",dura);
-        long result = db.insert("Course",null,cv);
-    }
-    public void insertdept(String d_name,String dept_id,int no_of_Student,String HOD){
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues cv = new ContentValues();
-        cv.put("d_name",d_name);
-        cv.put("dept_id",dept_id);
-        cv.put("no_of_Student",no_of_Student);
-        cv.put("HOD",HOD);
-        long result = db.insert("Dept",null,cv);
     }
     public boolean deletedata(int scholar_no){
         SQLiteDatabase db = this.getWritableDatabase();
@@ -80,16 +57,6 @@ public class DataHelper extends SQLiteOpenHelper {
     public Cursor getData(){
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor= db.rawQuery("select * from Student", null);
-        return cursor;
-    }
-    public Cursor getcourse(){
-        SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor= db.rawQuery("select * from Course", null);
-        return cursor;
-    }
-    public Cursor getdept(){
-        SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor= db.rawQuery("select * from Dept", null);
         return cursor;
     }
 }

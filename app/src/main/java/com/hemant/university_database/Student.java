@@ -20,9 +20,7 @@ public class Student extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student);
-        button2=findViewById(R.id.button2);
         button4=findViewById(R.id.button4);
-        button6=findViewById(R.id.button6);
         db=new DataHelper(this);
         button4.setOnClickListener(new View.OnClickListener() {
             @Override
